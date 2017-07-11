@@ -1,24 +1,83 @@
 .App {
   text-align: center;
+  margin: 5vh 32vh;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.mainSearch {
+  background-color: #E8E8E8;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.mainHeader {
+    margin-top: 10vh !important;
+    margin-bottom: 7vh !important;
 }
 
-.App-intro {
-  font-size: large;
+.searchMargin {
+  padding-bottom: 25vh !important;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.mainInfo {
+  background-color: #BFBFBF
+}
+
+.infoHeader {
+  padding-top: 15vh !important;
+  padding-bottom: 5vh !important;
+}
+
+.infoText {
+  height: inherit;
+    width: 33vh;
+}
+
+.infoList {
+  padding-bottom: 15vh !important;
+  width: 100%;
+}
+
+.autocomplete {
+    border: #E8E8E8;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 2px;
+    outline: none;
+}
+
+.guestsButton{
+  background-color: white !important;
+  border: #E8E8E8 !important;
+  padding: 17.5px !important;
+  font-size: 16px !important;
+  border-radius: 2px !important;
+  outline: none !important;
+  width: 100%;
+}
+
+.searchButton {
+  width: 100%;
+  padding: 17.5px !important;
+  font-size: 16px !important;
+  border-radius: 2px !important;
+  outline: none !important;
+}
+
+.floatRight {
+  float: right;
+}
+
+.maxWidth {
+  width: 100%;
+}
+
+#PlacesAutocomplete_autocomplete-container {
+  width: 100%;
+}
+
+.counterbutton {
+  border-radius: 2px !important;
+}
+
+.personPicker {
+  position:absolute  !important;
+  width: 190px;
 }
