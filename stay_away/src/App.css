@@ -1,6 +1,15 @@
 .App {
   text-align: center;
-  margin: 5vh 32vh;
+  margin-left: 32vh !important;
+  margin-right: 32vh !important;
+}
+
+.MainMenu {
+   margin-top: 5vh !important;
+   margin-left: 32vh !important;
+   margin-right: 32vh !important;
+   margin-bottom: 4px !important;
+   background-color: #E8E8E8 !important;
 }
 
 .mainSearch {
@@ -8,7 +17,7 @@
 }
 
 .mainHeader {
-    margin-top: 10vh !important;
+    padding-top: 10vh !important;
     margin-bottom: 7vh !important;
 }
 

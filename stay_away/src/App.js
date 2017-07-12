@@ -3,15 +3,46 @@ import { Container, Menu, Image, Button, Grid, Header, List, Segment, Icon } fro
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 import logo from './work-in-progress.jpeg';
 import './App.css';
+import About from './About';
+import Login from './Login';
 import 'semantic-ui-css/semantic.min.css'
+import { Route, Switch, Link, withRouter } from 'react-router-dom'
 
 class App extends Component {
+  render() {
+    return (
+      <div>
+        <Route render={({ history }) => (
+          <MainMenu 
+           handleItemClick={(route)=>{history.push(route)}}
+           activeItem={window.location.hash}
+          />
+          )}/>
+        <Main/>
+      </div>
+    )
+  }
+}
+
+
+class Main extends Component {
+  render() {
+    return (
+    <Switch>
+      <Route exact path='/' component={Home}/>
+      <Route path='/About' component={About} />
+      <Route path='/Login' component={Login} />
+    </Switch>
+    )
+  }
+}
+
+class Home extends Component {
   render() {
     return (
       <div className="App">
         <div className="mainSearch">
           <Container>
-            <MainMenu/>
             <Header className='mainHeader' size='huge'>Book a Verified, Professionally Managed Home.</Header>
             <SearchRentals/>
           </Container>
@@ -42,26 +73,19 @@ class App extends Component {
   }
 }
 
-class MainMenu extends Component {
-  state = { activeItem: 'home' }
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
-  render() {
-    const { activeItem } = this.state
-    return (
-      <Menu pointing secondary color='red'>
-        <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick}>
-            <Image size='tiny' src={logo}/>
-        </Menu.Item>
-        <Menu.Menu position='right'>
-          <Menu.Item name='About' active={activeItem === 'About'}  onClick={this.handleItemClick} />
-          <Menu.Item name='Contact' active={activeItem === 'Contact'} onClick={this.handleItemClick} />
-          <Menu.Item name='Login' active={activeItem === 'Login'} onClick={this.handleItemClick} />
-        </Menu.Menu>
-      </Menu>
-    )
-  }
+const MainMenu = (props) => {
+  return (
+    <Menu className={'MainMenu'} pointing secondary color='red'>
+      <Menu.Item name='home' active={props.activeItem === '#/'} onClick={() => props.handleItemClick('/')}>
+          <Image size='tiny' src={logo}/>
+      </Menu.Item>
+      <Menu.Menu position='right'>
+        <Menu.Item name='About' active={props.activeItem === '#/About'}  onClick={() => props.handleItemClick('/About')} />
+        <Menu.Item name='Contact' active={props.activeItem === '#/Contact'} onClick={() => props.handleItemClick('/Contact')} />
+        <Menu.Item name='Login' active={props.activeItem === '#/Login'} onClick={() => props.handleItemClick('/Login')} />
+      </Menu.Menu>
+    </Menu>
+  )
 }
 
 class SearchRentals extends Component {
@@ -234,3 +258,10 @@ const PersonCounter = (props) => {
 
 
 export default App;
+
+
+
+//stayrestful.com/search/Children=0&Adults=1&Infants=2&lat=1&long=1&
+//stayrestful.com/apt/#
+
+//negative number bug
