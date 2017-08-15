@@ -1,0 +1,227 @@
+Package Report
+
+-----------------------------------------------------------------------------
+Document:
+Name: New Site Sketch 4.ai
+Color Mode: RGB color
+Color Profile: sRGB IEC61966-2.1
+Ruler Units: pixels
+Artboard Dimensions: 1366.3751 px x 1230.3021 px
+Show Images in Outline Mode: OFF
+Highlight Substituted Fonts: OFF
+Highlight Substituted Glyphs: OFF
+Preserve Text Editability
+Simulate Colored Paper: OFF
+
+-----------------------------------------------------------------------------
+Spot Color Objects:
+
+-----------------------------------------------------------------------------
+Missing Fonts:NONE
+
+-----------------------------------------------------------------------------
+Protected Fonts that were not packaged:NONE
+
+-----------------------------------------------------------------------------
+Fonts:
+Larsseit (TrueType)
+Larsseit-Bold (TrueType)
+
+-----------------------------------------------------------------------------
+Embedded Fonts:
+NONE
+
+-----------------------------------------------------------------------------
+Missing Links:
+NONE
+
+-----------------------------------------------------------------------------
+Linked Images:
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/Screen Shot 2017-07-12 at 7.43.44 PM
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 18541K, 1798 by 2640 pixels
+Dimensions: 899 by 1320 points 
+Resolution: 144 by 144 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/white-interior.png
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 2813K, 1217 by 789 pixels
+Dimensions: 785.427 by 509.205 points 
+Resolution: 111.562 by 111.562 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/white-interior.png
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 2813K, 1217 by 789 pixels
+Dimensions: 785.427 by 509.205 points 
+Resolution: 111.562 by 111.562 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/white-interior.png
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 2813K, 1217 by 789 pixels
+Dimensions: 785.427 by 509.205 points 
+Resolution: 111.562 by 111.562 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/white-interior.png
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 2813K, 1217 by 789 pixels
+Dimensions: 785.427 by 509.205 points 
+Resolution: 111.562 by 111.562 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/1_Victoria-Jordan_Chris-Gillett-Houston-Headshot-Photographer.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 5273K, 1500 by 1200 pixels
+Dimensions: 284.615 by 227.692 points 
+Resolution: 379.46 by 379.46 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/1_Victoria-Jordan_Chris-Gillett-Houston-Headshot-Photographer.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 5273K, 1500 by 1200 pixels
+Dimensions: 284.615 by 227.692 points 
+Resolution: 379.46 by 379.46 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/1_Victoria-Jordan_Chris-Gillett-Houston-Headshot-Photographer.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 5273K, 1500 by 1200 pixels
+Dimensions: 284.615 by 227.692 points 
+Resolution: 379.46 by 379.46 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/1_Victoria-Jordan_Chris-Gillett-Houston-Headshot-Photographer.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 5273K, 1500 by 1200 pixels
+Dimensions: 284.615 by 227.692 points 
+Resolution: 379.46 by 379.46 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/1_Victoria-Jordan_Chris-Gillett-Houston-Headshot-Photographer.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 5273K, 1500 by 1200 pixels
+Dimensions: 284.615 by 227.692 points 
+Resolution: 379.46 by 379.46 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/1_Victoria-Jordan_Chris-Gillett-Houston-Headshot-Photographer.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 5273K, 1500 by 1200 pixels
+Dimensions: 284.615 by 227.692 points 
+Resolution: 379.46 by 379.46 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/white-interior.png
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 2813K, 1217 by 789 pixels
+Dimensions: 1186.057 by 768.939 points 
+Resolution: 73.878 by 73.878 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/white-interior.png
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 2813K, 1217 by 789 pixels
+Dimensions: 1065.405 by 690.719 points 
+Resolution: 82.245 by 82.245 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/white-interior.png
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 2813K, 1217 by 789 pixels
+Dimensions: 915.681 by 593.651 points 
+Resolution: 95.693 by 95.693 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/white-interior.png
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 2813K, 1217 by 789 pixels
+Dimensions: 915.681 by 593.651 points 
+Resolution: 95.693 by 95.693 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/white-interior.png
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 2813K, 1217 by 789 pixels
+Dimensions: 1159.377 by 751.642 points 
+Resolution: 75.579 by 75.579 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/Screen Shot 2017-07-12 at 7.43.44 PM
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 18541K, 1798 by 2640 pixels
+Dimensions: 899 by 1320 points 
+Resolution: 144 by 144 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/white-interior.png
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 2813K, 1217 by 789 pixels
+Dimensions: 1197.929 by 776.636 points 
+Resolution: 73.146 by 73.146 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/white-interior.png
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 2813K, 1217 by 789 pixels
+Dimensions: 785.427 by 509.205 points 
+Resolution: 111.562 by 111.562 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/white-interior.png
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 2813K, 1217 by 789 pixels
+Dimensions: 785.427 by 509.205 points 
+Resolution: 111.562 by 111.562 pixels per inch
+
+
+/Volumes/Chad Losser/Freelance/Blanket Homes/Images/white-interior.png
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 2813K, 1217 by 789 pixels
+Dimensions: 785.427 by 509.205 points 
+Resolution: 111.562 by 111.562 pixels per inch

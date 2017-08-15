@@ -1,21 +1,35 @@
 import React, { Component } from 'react';
-import { Container, Menu, Image, Button, Grid, Header, List, Segment, Icon } from 'semantic-ui-react'
+import { Container, Menu, Image, Button, Grid, Header, List, Segment, Icon, Input } from 'semantic-ui-react'
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
-import logo from './work-in-progress.jpeg';
+import logo from './logo.png';
 import './App.css';
+import Search from './Search';
 import About from './About';
-import Login from './Login';
 import 'semantic-ui-css/semantic.min.css'
-import { Route, Switch, Link, withRouter } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 class App extends Component {
+  state = {
+    Modalopen: false,
+  }
+
+  RenderLoginModal = () => {
+    this.setState({Modalopen: true});
+  }
+
+  CloseLoginModal = () => {
+    this.setState({Modalopen: false})
+  }
+
   render() {
     return (
       <div>
+        {this.state.Modalopen ? <LoginModal open={this.state.Modalopen} close={() => this.CloseLoginModal()} /> : null}
         <Route render={({ history }) => (
           <MainMenu 
            handleItemClick={(route)=>{history.push(route)}}
            activeItem={window.location.hash}
+           RenderLoginModal= {() => this.RenderLoginModal()}
           />
           )}/>
         <Main/>
@@ -29,9 +43,11 @@ class Main extends Component {
   render() {
     return (
     <Switch>
-      <Route exact path='/' component={Home}/>
+      <Route exact path='/' render={({ history }) => (
+        <Home handleItemClick={(route)=>{history.push(route)}}/>
+      )}/>
       <Route path='/About' component={About} />
-      <Route path='/Login' component={Login} />
+      <Route path='/Search' component={Search}/>
     </Switch>
     )
   }
@@ -44,7 +60,7 @@ class Home extends Component {
         <div className="mainSearch">
           <Container>
             <Header className='mainHeader' size='huge'>Book a Verified, Professionally Managed Home.</Header>
-            <SearchRentals/>
+            <SearchRentals handleItemClick={(route) => this.props.handleItemClick(route)}/>
           </Container>
         </div>
         <div className='mainInfo'>
@@ -73,19 +89,40 @@ class Home extends Component {
   }
 }
 
-const MainMenu = (props) => {
-  return (
-    <Menu className={'MainMenu'} pointing secondary color='red'>
-      <Menu.Item name='home' active={props.activeItem === '#/'} onClick={() => props.handleItemClick('/')}>
-          <Image size='tiny' src={logo}/>
-      </Menu.Item>
-      <Menu.Menu position='right'>
-        <Menu.Item name='About' active={props.activeItem === '#/About'}  onClick={() => props.handleItemClick('/About')} />
-        <Menu.Item name='Contact' active={props.activeItem === '#/Contact'} onClick={() => props.handleItemClick('/Contact')} />
-        <Menu.Item name='Login' active={props.activeItem === '#/Login'} onClick={() => props.handleItemClick('/Login')} />
-      </Menu.Menu>
-    </Menu>
-  )
+class MainMenu  extends Component {
+
+  render() {
+    return (
+      <div>
+        <Menu className={'MainMenu'} pointing secondary color='red'>
+          <Menu.Item name='home' active={this.props.activeItem === '#/'} onClick={() => this.props.handleItemClick('/')}>
+              <Image size='small' src={logo}/>
+          </Menu.Item>
+          <Menu.Menu position='right'>
+            <Menu.Item name='About' active={this.props.activeItem === '#/About'}  onClick={() => this.props.handleItemClick('/About')} />
+            <Menu.Item name='Contact' active={this.props.activeItem === '#/Contact'} onClick={() => this.props.handleItemClick('/Contact')} />
+            <Menu.Item name='Login' active={this.props.activeItem === '#/Login'} onClick={() => this.props.RenderLoginModal()} />
+          </Menu.Menu>
+        </Menu>
+      </div>
+    )
+  }
+}
+
+class LoginModal extends Component {
+  render() {
+    return (
+      <div className='loginModalBackground'>
+        <div className='loginModal'>
+           <Input placeholder='Username' />
+           <Input placeholder='Password' />
+           <br/>
+            <Button color='black' content='Cancel' onClick={() => this.props.close()}/>
+            <Button color='red' content="Log in" onClick={() => this.props.close()} />
+        </div>
+      </div>
+    );
+  }
 }
 
 class SearchRentals extends Component {
@@ -132,20 +169,20 @@ constructor(props) {
     }
   }
 
-  searchApiCall = (latLng) => {
-    latLng.radius = 30;
-    latLng.Adults = this.state.Adults;
-    latLng.Children = this.state.Children;
-    latLng.Infants = this.state.Infants;
-    console.log('Josh, this is what a search object could look like: ', latLng)
+  buildSearchURL = (latlng) => {
+    let queryString = 
+    `/Search?lat=${latlng.lat}&lng=${latlng.lng}&radius=${20}&Adults=${this.state.Adults}&Children=${this.state.Children}&Infants=${this.state.Infants}`
+    console.log(queryString)
+    this.props.handleItemClick(queryString)
   }
 
   handleSearchSubmit = () => {
     geocodeByAddress(this.state.address)
       .then(results => getLatLng(results[0]))
-      .then(latLng => this.searchApiCall(latLng))
+      .then(latLng => this.buildSearchURL(latLng))
       .catch(error => console.error('Error', error))
   }
+
   render() {
     const inputProps = {
       value: this.state.address,

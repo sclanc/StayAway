@@ -1,13 +1,13 @@
 .App {
   text-align: center;
-  margin-left: 32vh !important;
-  margin-right: 32vh !important;
+  /* margin-left: 32vh !important;
+  margin-right: 32vh !important; */
 }
 
 .MainMenu {
-   margin-top: 5vh !important;
+   /* margin-top: 5vh !important;
    margin-left: 32vh !important;
-   margin-right: 32vh !important;
+   margin-right: 32vh !important; */
    margin-bottom: 4px !important;
    background-color: #E8E8E8 !important;
 }
@@ -90,3 +90,22 @@
   position:absolute  !important;
   width: 190px;
 }
+
+.loginModalBackground {
+  position: absolute;
+  z-index: 9998;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100vw;
+  height: 100vh;
+}
+
+.loginModal {
+  background-color: white;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20vw;
+    height: 40vh;
+    z-index: 9999;
+}
+
