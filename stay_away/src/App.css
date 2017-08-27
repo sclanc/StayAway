@@ -5,15 +5,12 @@
 }
 
 .MainMenu {
-   /* margin-top: 5vh !important;
-   margin-left: 32vh !important;
-   margin-right: 32vh !important; */
-   margin-bottom: 4px !important;
    background-color: #E8E8E8 !important;
 }
 
 .mainSearch {
   background-color: #E8E8E8;
+  margin-top: 4px;
 }
 
 .mainHeader {
@@ -109,3 +106,44 @@
     z-index: 9999;
 }
 
+.mapFrame {
+  float: right;
+  width: 50%;
+  height: 100%;
+  /* padding-top: 5%; */
+}
+
+.searchContent {
+  margin: 0 5% 0 5%; 
+
+}
+.resultsContent {
+  float: left;
+  width: 50%;
+}
+
+.searchContainer {
+  padding-top: 5%;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #E8E8E8; 
+}
+
+.ui.form input{
+  background-color: white !important;
+  border: #E8E8E8 !important;
+  padding: 17.5px !important;
+  font-size: 16px !important;
+  border-radius: 2px !important;
+  outline: none !important;
+}
+
+.searchAutoComplete {
+  width: 100%;
+}
+
+.results {
+  background-color: #BFBFBF;
+  
+}

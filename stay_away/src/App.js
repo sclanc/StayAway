@@ -11,6 +11,7 @@ import { Route, Switch } from 'react-router-dom'
 class App extends Component {
   state = {
     Modalopen: false,
+    user: []
   }
 
   RenderLoginModal = () => {
@@ -21,10 +22,22 @@ class App extends Component {
     this.setState({Modalopen: false})
   }
 
+  login = (credentials) => {
+    let headers = new Headers({"Content-Type": "application/json"})
+     console.log(`params: ${JSON.stringify(credentials)}`)
+    fetch(`http://stayaway.ga/login`, {
+      method: 'POST',
+      headers: headers,
+      body: JSON.stringify(credentials)
+    }).then((response) => response.json())
+      .then((json) => console.log(json))
+      .catch(console.log('booo'))
+  }   
+
   render() {
     return (
       <div>
-        {this.state.Modalopen ? <LoginModal open={this.state.Modalopen} close={() => this.CloseLoginModal()} /> : null}
+        {this.state.Modalopen ? <LoginModal open={this.state.Modalopen} close={() => this.CloseLoginModal()}  login={this.login}/> : null}
         <Route render={({ history }) => (
           <MainMenu 
            handleItemClick={(route)=>{history.push(route)}}
@@ -110,6 +123,14 @@ class MainMenu  extends Component {
 }
 
 class LoginModal extends Component {
+  state = {
+    username: 'sean',
+    password: 'password1',
+  }
+  processLogin = () =>  {
+    this.props.login({username: this.state.username, password: this.state.password});
+    this.props.close();
+  }
   render() {
     return (
       <div className='loginModalBackground'>
@@ -118,7 +139,7 @@ class LoginModal extends Component {
            <Input placeholder='Password' />
            <br/>
             <Button color='black' content='Cancel' onClick={() => this.props.close()}/>
-            <Button color='red' content="Log in" onClick={() => this.props.close()} />
+            <Button color='red' content="Log in" onClick={() => this.processLogin()} />
         </div>
       </div>
     );
@@ -154,14 +175,14 @@ constructor(props) {
   }
 
   handlePersonCounterMinus = (type) => {
-    switch(type) {
-      case 'Adults': 
+    switch(true) {
+      case type === 'Adults' && this.state.Adults - 1 >= 0: 
         this.setState({Adults:this.state.Adults-1});
         break;
-      case 'Children':
+      case type === 'Children' && this.state.Children - 1 >= 0:
         this.setState({Children:this.state.Children-1});
         break;
-      case 'Infants':
+      case type === 'Infants' && this.state.Infants - 1 >= 0:
         this.setState({Infants:this.state.Infants-1});
         break;
       default:
