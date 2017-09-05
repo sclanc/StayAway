@@ -11,7 +11,7 @@ import { Route, Switch } from 'react-router-dom'
 class App extends Component {
   state = {
     Modalopen: false,
-    user: []
+    user: {}
   }
 
   RenderLoginModal = () => {
@@ -23,15 +23,15 @@ class App extends Component {
   }
 
   login = (credentials) => {
-    let headers = new Headers({"Content-Type": "application/json"})
-     console.log(`params: ${JSON.stringify(credentials)}`)
-    fetch(`http://stayaway.ga/login`, {
-      method: 'POST',
-      headers: headers,
-      body: JSON.stringify(credentials)
-    }).then((response) => response.json())
-      .then((json) => console.log(json))
-      .catch(console.log('booo'))
+    fetch('http://stayaway.ga/login', {
+       method: 'POST', 
+       headers: {    
+         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8" 
+       },
+       body: `username=${credentials.username}&password=${credentials.password}`  
+      }).then(res => res.json())
+        .then(json => this.setState({user: json}))
+        .catch( e => console.log(e))
   }   
 
   render() {
@@ -131,12 +131,18 @@ class LoginModal extends Component {
     this.props.login({username: this.state.username, password: this.state.password});
     this.props.close();
   }
+
+  handleChange = (event,input) => {
+    input === 'username' ? this.setState({username: event.target.value}) : 
+    this.setState({password: event.target.value}) 
+  }
+
   render() {
     return (
       <div className='loginModalBackground'>
         <div className='loginModal'>
-           <Input placeholder='Username' />
-           <Input placeholder='Password' />
+           <Input placeholder='Username' onChange={ (event) => this.handleChange(event,'username')}/>
+           <Input placeholder='Password' onChange={(event) => this.handleChange(event, 'password')} />
            <br/>
             <Button color='black' content='Cancel' onClick={() => this.props.close()}/>
             <Button color='red' content="Log in" onClick={() => this.processLogin()} />
