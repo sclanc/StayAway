@@ -1,0 +1,40 @@
+.searchResultImagePrice {
+    position: relative;
+    width: 100%;
+    height: 100%
+}
+
+.searchResultContainer {
+    width: 300px;
+    height: 300px;
+}
+
+.searchResultImage {
+    height: -webkit-fill-available;
+    width: 100%;
+}
+
+.searchResultPrice {
+    color: white;
+    font-size: 24px;
+    padding: 3%;
+}
+
+.searchResultPriceScreen {
+    width:100%;
+    height: 100%;
+    background: rgba(0,0,0,.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.searchResultName {
+    margin-top: 1%;
+    color: red;
+    font-size: 13px;
+}
+
+.active.icon {
+    color: #989898 !important;
+}

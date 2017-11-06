@@ -5,8 +5,9 @@ import logo from './logo.png';
 import './App.css';
 import Search from './Search';
 import About from './About';
-import 'semantic-ui-css/semantic.min.css'
-import { Route, Switch } from 'react-router-dom'
+import Login from './Login/Login';
+import 'semantic-ui-css/semantic.min.css';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   state = {
@@ -23,7 +24,7 @@ class App extends Component {
   }
 
   login = (credentials) => {
-    fetch('http://stayaway.ga/login', {
+    fetch('http://api.stayrestful.com/login', {
        method: 'POST', 
        headers: {    
          "Content-type": "application/x-www-form-urlencoded; charset=UTF-8" 
@@ -37,12 +38,13 @@ class App extends Component {
   render() {
     return (
       <div>
-        {this.state.Modalopen ? <LoginModal open={this.state.Modalopen} close={() => this.CloseLoginModal()}  login={this.login}/> : null}
+        {this.state.Modalopen ? <Login open={this.state.Modalopen} close={() => this.CloseLoginModal()}  login={this.login}/> : null}
         <Route render={({ history }) => (
           <MainMenu 
-           handleItemClick={(route)=>{history.push(route)}}
-           activeItem={window.location.hash}
-           RenderLoginModal= {() => this.RenderLoginModal()}
+            user={this.state.user}
+            handleItemClick={(route)=>{history.push(route)}}
+            activeItem={window.location.hash}
+            RenderLoginModal= {() => this.RenderLoginModal()}
           />
           )}/>
         <Main/>
@@ -114,41 +116,13 @@ class MainMenu  extends Component {
           <Menu.Menu position='right'>
             <Menu.Item name='About' active={this.props.activeItem === '#/About'}  onClick={() => this.props.handleItemClick('/About')} />
             <Menu.Item name='Contact' active={this.props.activeItem === '#/Contact'} onClick={() => this.props.handleItemClick('/Contact')} />
-            <Menu.Item name='Login' active={this.props.activeItem === '#/Login'} onClick={() => this.props.RenderLoginModal()} />
+            { !this.props.user.result ? <Menu.Item name='Login' active={this.props.activeItem === '#/Login'} onClick={() => this.props.RenderLoginModal()} /> : 
+              <Menu.Item name='Profile' active={this.props.activeItem === '#/Profile'} onClick={() => this.props.handleItemClick('/Profile')} />
+            }
           </Menu.Menu>
         </Menu>
       </div>
     )
-  }
-}
-
-class LoginModal extends Component {
-  state = {
-    username: 'sean',
-    password: 'password1',
-  }
-  processLogin = () =>  {
-    this.props.login({username: this.state.username, password: this.state.password});
-    this.props.close();
-  }
-
-  handleChange = (event,input) => {
-    input === 'username' ? this.setState({username: event.target.value}) : 
-    this.setState({password: event.target.value}) 
-  }
-
-  render() {
-    return (
-      <div className='loginModalBackground'>
-        <div className='loginModal'>
-           <Input placeholder='Username' onChange={ (event) => this.handleChange(event,'username')}/>
-           <Input placeholder='Password' onChange={(event) => this.handleChange(event, 'password')} />
-           <br/>
-            <Button color='black' content='Cancel' onClick={() => this.props.close()}/>
-            <Button color='red' content="Log in" onClick={() => this.processLogin()} />
-        </div>
-      </div>
-    );
   }
 }
 

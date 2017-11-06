@@ -72,7 +72,7 @@
 }
 
 .maxWidth {
-  width: 100%;
+  width: 50%;
 }
 
 #PlacesAutocomplete_autocomplete-container {
@@ -86,24 +86,6 @@
 .personPicker {
   position:absolute  !important;
   width: 190px;
-}
-
-.loginModalBackground {
-  position: absolute;
-  z-index: 9998;
-  background-color: rgba(255, 255, 255, 0.5);
-  width: 100vw;
-  height: 100vh;
-}
-
-.loginModal {
-  background-color: white;
-  position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 20vw;
-    height: 40vh;
-    z-index: 9999;
 }
 
 .mapFrame {
@@ -120,6 +102,7 @@
 .resultsContent {
   float: left;
   width: 50%;
+  height: 100%;
 }
 
 .searchContainer {
@@ -127,7 +110,7 @@
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #E8E8E8; 
+  background-color: #F6F6F6; 
 }
 
 .ui.form input{
@@ -140,10 +123,51 @@
 }
 
 .searchAutoComplete {
-  width: 100%;
+  width: 50%;
+}
+
+.resultsContainer {
+  background-color: #E8E8E8;
+  padding: 5%;
+  margin-top: 20vh;
 }
 
 .results {
-  background-color: #BFBFBF;
-  
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.DateRangePicker {
+  width: 100%;
+}
+
+.DateRangePickerInput {
+  width: 100%;
+  border:  none !important;
+}
+
+.CalendarDay__selected_start  {
+  background: #b22f1a !important;
+  border-color: white !important;
+}
+
+.CalendarDay__selected_span {
+  background: red !important;
+  border-color: white;
+}
+
+.CalendarDay__hovered_span {
+  background: rgba(249, 58, 27, .7)!important;
+  border-color: white;
+}
+
+.CalendarDay__selected_end  {
+  background: #b22f1a !important;
+  border-color: white !important;
+}
+
+.DayPickerKeyboardShortcuts_show__bottomRight {
+  border-right: 33px solid red !important;
 }
